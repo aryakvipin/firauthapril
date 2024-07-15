@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1081792280860",
+    "project_id": "aprilfire-c4f43",
+    "storage_bucket": "aprilfire-c4f43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081792280860:android:426b42a86c0d65c542a2d9",
+        "android_client_info": {
+          "package_name": "com.example.firbeseapril"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081792280860-087u03v8ejrpcerevulkbo3md48i2kum.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firbeseapril",
+            "certificate_hash": "79ca18c83470eabe65338b173d25d9a3af73f17c"
+          }
+        },
+        {
+          "client_id": "1081792280860-ro4b63obt0a89msuv2fvv18veoc8lcg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiHv4jYzh-MjK3gDtMSODpphskb8PLgVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081792280860-ro4b63obt0a89msuv2fvv18veoc8lcg3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
