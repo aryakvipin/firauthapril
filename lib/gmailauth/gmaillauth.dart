@@ -6,11 +6,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
       options: const FirebaseOptions(
-          apiKey: "AIzaSyDrohrsOQX0ogDcsJVNHBpGglkhz0jIQxs",
-          appId: "1:921697996355:android:fbdd6300dfebc528c64ef6",
+          apiKey: "AIzaSyCiHv4jYzh-MjK3gDtMSODpphskb8PLgVI",
+          appId: "1:1081792280860:android:426b42a86c0d65c542a2d9",
           messagingSenderId: "",
-          projectId: "firejan-cefe6",
-          storageBucket: "firejan-cefe6.appspot.com"));
+          projectId: "aprilfire-c4f43",
+          storageBucket: "aprilfire-c4f43.appspot.com"));
   runApp(MaterialApp(
     home: GoogleSignInScreen(),
   ));
