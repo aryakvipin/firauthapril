@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController phoneController = TextEditingController();
   TextEditingController otpController = TextEditingController();
 
-  FirebaseAuth auth = FirebaseAuth.instance;
+  FirebaseAuth auth = FirebaseAuth.c;
   bool otpVisibility = false;
   User? user;
   String verificationID = "";

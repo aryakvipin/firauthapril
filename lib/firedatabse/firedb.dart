@@ -5,13 +5,12 @@ import 'package:flutter/material.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: const FirebaseOptions(
-        apiKey: "AIzaSyAJyk_z0ewu6mO0l5-yI3LQx75KQMOg0W8",
-        appId: "1:941207950066:android:c48504c5fe66b9d155b66b",
-        messagingSenderId: "",
-        projectId: "mygsignin-1649328089383",
-        storageBucket: "mygsignin-1649328089383.appspot.com"),
-  );
+      options: const FirebaseOptions(
+          apiKey: "AIzaSyCiHv4jYzh-MjK3gDtMSODpphskb8PLgVI",
+          appId: "1:1081792280860:android:426b42a86c0d65c542a2d9",
+          messagingSenderId: "",
+          projectId: "aprilfire-c4f43",
+          storageBucket: "aprilfire-c4f43.appspot.com"));
   runApp(const MaterialApp(
     home: FireBaseCRUD(),
   ));
@@ -25,8 +24,7 @@ class FireBaseCRUD extends StatefulWidget {
 }
 
 class _FireBaseCRUDState extends State<FireBaseCRUD> {
-  final cname = TextEditingController();
-  final cemail = TextEditingController();
+
   late CollectionReference _userCollection; // object of collection in db
 
   @override
@@ -77,6 +75,8 @@ class _FireBaseCRUDState extends State<FireBaseCRUD> {
                       children: [
                         IconButton(
                             onPressed: () {
+                              uname.text=userName;
+                              uemail.text=userEmail;
                               editUserData(userId);
                             },
                             icon: const Icon(Icons.edit)),
@@ -97,7 +97,8 @@ class _FireBaseCRUDState extends State<FireBaseCRUD> {
       ),
     );
   }
-
+  final cname = TextEditingController();
+  final cemail = TextEditingController();
   void createUser() {
     showDialog(
         context: context,
@@ -151,46 +152,56 @@ class _FireBaseCRUDState extends State<FireBaseCRUD> {
   Stream<QuerySnapshot> readUser() {
     return _userCollection.snapshots();
   }
-
+  var uname = TextEditingController();
+  var uemail = TextEditingController();
   ///show bottom sheet to edit userdata
   void editUserData(String userId) {
-    var uname = TextEditingController();
-    var uemail = TextEditingController();
+
+
 
     showModalBottomSheet(
         context: context,
+        isScrollControlled: true,
+        elevation: 5,
         builder: (context) {
-          return Padding(
-            padding: const EdgeInsets.all(18.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                TextField(
-                  controller: uname,
-                  decoration: const InputDecoration(
-                      border: OutlineInputBorder(), hintText: "Name"),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: uemail,
-                  decoration: const InputDecoration(
-                      border: OutlineInputBorder(), hintText: "Email"),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                ElevatedButton(
-                    onPressed: () {
-                      updateUser(userId, uname.text, uemail.text);
-                      uname.clear();
-                      uemail.clear();
-                    },
-                    child: const Text("Update User"))
-              ],
+          return Container(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).viewInsets.bottom ,
+              top: 15,
+              left: 15,
+              right: 15,
             ),
-          );
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextField(
+                    controller: uname,
+                    decoration: const InputDecoration(
+                        border: OutlineInputBorder(), hintText: "Name"),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  TextField(
+                    controller: uemail,
+                    decoration: const InputDecoration(
+                        border: OutlineInputBorder(), hintText: "Email"),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        updateUser(userId, uname.text, uemail.text);
+                        uname.clear();
+                        uemail.clear();
+                      },
+                      child: const Text("Update User"))
+                ],
+              ),
+            );
+
         });
   }
 
